@@ -31,18 +31,18 @@ const RCTModalHostView = requireNativeComponent('RCTModalHostView', null);
  * ```javascript
  * import React, { Component } from 'react';
  * import { Modal, Text, TouchableHighlight, View } from 'react-native';
- * 
+ *
  * class ModalExample extends Component {
- *  
+ *
  *   constructor(props) {
  *     super(props);
  *     this.state = {modalVisible: false};
  *   }
- * 
+ *
  *   setModalVisible(visible) {
  *     this.setState({modalVisible: visible});
  *   }
- * 
+ *
  *   render() {
  *     return (
  *       <View style={{marginTop: 22}}>
@@ -55,23 +55,23 @@ const RCTModalHostView = requireNativeComponent('RCTModalHostView', null);
  *          <View style={{marginTop: 22}}>
  *           <View>
  *             <Text>Hello World!</Text>
- * 
+ *
  *             <TouchableHighlight onPress={() => {
  *               this.setModalVisible(!this.state.modalVisible)
  *             }}>
  *               <Text>Hide Modal</Text>
  *             </TouchableHighlight>
- * 
+ *
  *           </View>
  *          </View>
  *         </Modal>
- * 
+ *
  *         <TouchableHighlight onPress={() => {
  *           this.setModalVisible(true)
  *         }}>
  *           <Text>Show Modal</Text>
  *         </TouchableHighlight>
- * 
+ *
  *       </View>
  *     );
  *   }
@@ -87,7 +87,7 @@ class Modal extends React.Component {
      * - `fade` fades into view
      * - `none` appears without an animation
      */
-    animationType: PropTypes.oneOf(['none', 'slide', 'fade']),
+    animationType: PropTypes.oneOf(['none', 'slide', 'fade', 'slideLeft', 'slideRight', 'slideTop', 'slideBottom']),
     /**
      * The `transparent` prop determines whether your modal will fill the entire view. Setting this to `true` will render the modal over a transparent background.
      */
@@ -98,7 +98,7 @@ class Modal extends React.Component {
     visible: PropTypes.bool,
     /**
      * The `onRequestClose` prop allows passing a function that will be called once the modal has been dismissed.
-     * 
+     *
      * _On the Android platform, this is a required function._
      */
     onRequestClose: Platform.OS === 'android' ? PropTypes.func.isRequired : PropTypes.func,

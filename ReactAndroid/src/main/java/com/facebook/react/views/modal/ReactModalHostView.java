@@ -199,6 +199,14 @@ public class ReactModalHostView extends ViewGroup implements LifecycleEventListe
       theme = R.style.Theme_FullScreenDialogAnimatedFade;
     } else if (mAnimationType.equals("slide")) {
       theme = R.style.Theme_FullScreenDialogAnimatedSlide;
+    } else if (mAnimationType.equals("slideLeft")) {
+      theme = R.style.Theme_FullScreenDialogAnimatedSlideLeft;
+    } else if (mAnimationType.equals("slideRight")) {
+      theme = R.style.Theme_FullScreenDialogAnimatedSlideRight;
+    } else if (mAnimationType.equals("slideTop")) {
+      theme = R.style.Theme_FullScreenDialogAnimatedSlideTop;
+    } else if (mAnimationType.equals("slideBottom")) {
+      theme = R.style.Theme_FullScreenDialogAnimatedSlideBottom;
     }
     mDialog = new Dialog(getContext(), theme);
 
